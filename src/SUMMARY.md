@@ -48,7 +48,7 @@
 
 # Data Structure and Algorithms
 
-- [Data Structure](./data-structures/index.md)
+<!-- - [Data Structure](./data-structures/index.md) -->
 
 ---
 
