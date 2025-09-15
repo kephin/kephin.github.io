@@ -27,12 +27,18 @@ fn Main() {
 }
 ```
 
+### The `use` declaration
+
 When we have many modules to use, it's easy to start getting tedious to write out `rand::some_function` repeatedly. There is a shortcut that we can use `use` keyword to pull specific things into the scope.
+
+### The `as` keyword
+
+Use the `as` keyword to bind imports to a different name.
 
 ![use-crate-modules](./use-crate-modules.png)
 
 ```rust
-use rand::thread_rng;
+use rand::thread_rng as rng;
 use rand::random;
 use rand::rngs::OsRng;
 
@@ -50,7 +56,7 @@ fn main() {
 
 Three ways:
 
-1. Create a module in an existing file.
+1. Create a module in the same file.
 
 > functions, structs, enums, etc. must have the `pub` keyword to make them visible outside the module
 
@@ -65,7 +71,7 @@ fn main() {
 }
 ```
 
-2. Create a module in a new file in the same folder.
+2. Create a module in a <u>new file in the same folder</u>
 
 ```rust
 // src/contents.rs
@@ -83,9 +89,9 @@ fn main() {
 ```
 
 3. Spread code out among several separate files in a new folder.
-   - every file and **folder** makes its own separate module
-   - cannot do deeply nested imports -> have to chain imports
+   - <u>every file and **folder**</u> makes its own separate module
    - whenever we make a folder under _src_, we have to place a `mod.rs` under it
+   - cannot do deeply nested imports 👉 have to chain imports
    - `super` refers the parent module
 
 ```rust
@@ -173,4 +179,3 @@ fn main() {
     println!("{:#?}", catalog);
 }
 ```
-
